@@ -35,7 +35,7 @@ Copyright (c) Mohd Shayan. All rights reserved.
 
 ## Project Structure
 
-- `app/src/main/java/com/shreezy/habittrack/` - app source code
+- `app/src/main/java/com/mohdshayan/habits/` - app source code
 - `app/src/main/res/` - resources, localization, icons
 - `app/schemas/` - Room schema export
 
