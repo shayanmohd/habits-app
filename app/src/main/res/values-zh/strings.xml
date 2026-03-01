@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">习惯</string>
+    <string name="screen_today">今天</string>
+    <string name="screen_habits">习惯</string>
+    <string name="screen_detail">习惯详情</string>
+    <string name="add_habit">添加习惯</string>
+    <string name="view_habits">查看习惯</string>
+    <string name="habit_name">习惯名称</string>
+    <string name="habit_notes">备注</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="frequency">频率</string>
+    <string name="frequency_daily">每天</string>
+    <string name="frequency_weekly">指定星期</string>
+    <string name="frequency_interval">每 n 天</string>
+    <string name="interval_days">间隔天数</string>
+    <string name="start_date">开始日期</string>
+    <string name="no_habits_today">今天没有需要完成的习惯</string>
+    <string name="no_habits_any">还没有习惯</string>
+    <string name="mark_done">标记完成</string>
+    <string name="done">已完成</string>
+    <string name="not_done">未完成</string>
+    <string name="required">需要</string>
+    <string name="not_required">不需要</string>
+    <string name="calendar">日历</string>
+    <string name="widget_title">习惯摘要</string>
+    <string name="widget_required">需要: %1$d</string>
+    <string name="widget_done">完成: %1$d</string>
+    <string name="weekday_sun">周日</string>
+    <string name="weekday_mon">周一</string>
+    <string name="weekday_tue">周二</string>
+    <string name="weekday_wed">周三</string>
+    <string name="weekday_thu">周四</string>
+    <string name="weekday_fri">周五</string>
+    <string name="weekday_sat">周六</string>
+    <string name="validation_name_required">习惯名称不能为空</string>
+    <string name="back">返回</string>
+    <string name="open_habit">打开习惯</string>
+    <string name="today_progress">已完成 %1$d / %2$d</string>
+</resources>

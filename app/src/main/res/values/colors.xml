@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_paper">#F9F9F7</color>
+    <color name="text_primary">#1C1C1C</color>
+    <color name="text_secondary">#8E8E8E</color>
+    <color name="done_green">#8FA998</color>
+    <color name="missed_red">#C97A7E</color>
+    <color name="not_required_gray">#E5E5E5</color>
+</resources>

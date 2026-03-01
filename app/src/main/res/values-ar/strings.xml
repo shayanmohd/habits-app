@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">العادات</string>
+    <string name="screen_today">اليوم</string>
+    <string name="screen_habits">العادات</string>
+    <string name="screen_detail">تفاصيل العادة</string>
+    <string name="add_habit">إضافة عادة</string>
+    <string name="view_habits">عرض العادات</string>
+    <string name="habit_name">اسم العادة</string>
+    <string name="habit_notes">ملاحظات</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="frequency">التكرار</string>
+    <string name="frequency_daily">يوميًا</string>
+    <string name="frequency_weekly">أيام محددة</string>
+    <string name="frequency_interval">كل n أيام</string>
+    <string name="interval_days">الفاصل (أيام)</string>
+    <string name="start_date">تاريخ البدء</string>
+    <string name="no_habits_today">لا توجد عادات مطلوبة اليوم</string>
+    <string name="no_habits_any">لا توجد عادات بعد</string>
+    <string name="mark_done">وضع علامة منجز</string>
+    <string name="done">منجز</string>
+    <string name="not_done">غير منجز</string>
+    <string name="required">مطلوب</string>
+    <string name="not_required">غير مطلوب</string>
+    <string name="calendar">التقويم</string>
+    <string name="widget_title">ملخص العادات</string>
+    <string name="widget_required">المطلوب: %1$d</string>
+    <string name="widget_done">المنجز: %1$d</string>
+    <string name="weekday_sun">الأحد</string>
+    <string name="weekday_mon">الاثنين</string>
+    <string name="weekday_tue">الثلاثاء</string>
+    <string name="weekday_wed">الأربعاء</string>
+    <string name="weekday_thu">الخميس</string>
+    <string name="weekday_fri">الجمعة</string>
+    <string name="weekday_sat">السبت</string>
+    <string name="validation_name_required">اسم العادة مطلوب</string>
+    <string name="back">رجوع</string>
+    <string name="open_habit">فتح العادة</string>
+    <string name="today_progress">%1$d / %2$d منجز</string>
+</resources>

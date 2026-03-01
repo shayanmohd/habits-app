@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gewohnheiten</string>
+    <string name="screen_today">heute</string>
+    <string name="screen_habits">gewohnheiten</string>
+    <string name="screen_detail">gewohnheitsdetails</string>
+    <string name="add_habit">gewohnheit hinzufügen</string>
+    <string name="view_habits">gewohnheiten ansehen</string>
+    <string name="habit_name">name der gewohnheit</string>
+    <string name="habit_notes">notizen</string>
+    <string name="save">speichern</string>
+    <string name="cancel">abbrechen</string>
+    <string name="frequency">häufigkeit</string>
+    <string name="frequency_daily">täglich</string>
+    <string name="frequency_weekly">bestimmte wochentage</string>
+    <string name="frequency_interval">alle n tage</string>
+    <string name="interval_days">intervall (tage)</string>
+    <string name="start_date">startdatum</string>
+    <string name="no_habits_today">heute keine erforderlichen gewohnheiten</string>
+    <string name="no_habits_any">noch keine gewohnheiten</string>
+    <string name="mark_done">als erledigt markieren</string>
+    <string name="done">erledigt</string>
+    <string name="not_done">nicht erledigt</string>
+    <string name="required">erforderlich</string>
+    <string name="not_required">nicht erforderlich</string>
+    <string name="calendar">kalender</string>
+    <string name="widget_title">gewohnheitsübersicht</string>
+    <string name="widget_required">erforderlich: %1$d</string>
+    <string name="widget_done">erledigt: %1$d</string>
+    <string name="weekday_sun">so</string>
+    <string name="weekday_mon">mo</string>
+    <string name="weekday_tue">di</string>
+    <string name="weekday_wed">mi</string>
+    <string name="weekday_thu">do</string>
+    <string name="weekday_fri">fr</string>
+    <string name="weekday_sat">sa</string>
+    <string name="validation_name_required">name der gewohnheit ist erforderlich</string>
+    <string name="back">zurück</string>
+    <string name="open_habit">gewohnheit öffnen</string>
+    <string name="today_progress">%1$d / %2$d erledigt</string>
+</resources>

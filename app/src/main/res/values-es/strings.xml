@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">habittrack</string>
+    <string name="screen_today">hoy</string>
+    <string name="screen_habits">hábitos</string>
+    <string name="screen_detail">detalle del hábito</string>
+    <string name="add_habit">agregar hábito</string>
+    <string name="view_habits">ver hábitos</string>
+    <string name="habit_name">nombre del hábito</string>
+    <string name="habit_notes">notas</string>
+    <string name="save">guardar</string>
+    <string name="cancel">cancelar</string>
+    <string name="frequency">frecuencia</string>
+    <string name="frequency_daily">diario</string>
+    <string name="frequency_weekly">días específicos</string>
+    <string name="frequency_interval">cada n días</string>
+    <string name="interval_days">intervalo (días)</string>
+    <string name="start_date">fecha de inicio</string>
+    <string name="no_habits_today">no hay hábitos requeridos hoy</string>
+    <string name="no_habits_any">aún no hay hábitos</string>
+    <string name="mark_done">marcar hecho</string>
+    <string name="done">hecho</string>
+    <string name="not_done">no hecho</string>
+    <string name="required">requerido</string>
+    <string name="not_required">no requerido</string>
+    <string name="calendar">calendario</string>
+    <string name="widget_title">resumen de hábitos</string>
+    <string name="widget_required">requeridos: %1$d</string>
+    <string name="widget_done">hechos: %1$d</string>
+    <string name="weekday_sun">dom</string>
+    <string name="weekday_mon">lun</string>
+    <string name="weekday_tue">mar</string>
+    <string name="weekday_wed">mié</string>
+    <string name="weekday_thu">jue</string>
+    <string name="weekday_fri">vie</string>
+    <string name="weekday_sat">sáb</string>
+    <string name="validation_name_required">el nombre es obligatorio</string>
+    <string name="back">volver</string>
+    <string name="open_habit">abrir hábito</string>
+    <string name="today_progress">%1$d / %2$d hechos</string>
+</resources>

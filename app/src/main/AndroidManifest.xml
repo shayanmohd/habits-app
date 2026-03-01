@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mohdshayan.habits">
+
+    <application
+        android:name=".HabitTrackApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HabitTrack">
+        <meta-data
+            android:name="project.owner.name"
+            android:value="Mohd Shayan" />
+        <meta-data
+            android:name="project.owner.website"
+            android:value="https://mohdshayan.com" />
+        <meta-data
+            android:name="project.owner.github"
+            android:value="https://github.com/shayanmohd" />
+        <meta-data
+            android:name="project.owner.email"
+            android:value="contact@mohdshayan.com" />
+        <meta-data
+            android:name="project.owner.linkedin"
+            android:value="https://linkedin.com/in/shayanmohd" />
+        <meta-data
+            android:name="project.owner.x"
+            android:value="@mohdshayanX" />
+        <meta-data
+            android:name="project.copyright"
+            android:value="Copyright (c) Mohd Shayan. All rights reserved." />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".widget.HabitsWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/habits_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b1ca7f5d51e2c1335fe95fc5ba74ce11",
+    "entities": [
+      {
+        "tableName": "habits",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `notes` TEXT NOT NULL, `frequencyType` TEXT NOT NULL, `weekdayMask` INTEGER NOT NULL, `intervalDays` INTEGER NOT NULL, `startEpochDay` INTEGER NOT NULL, `createdAtEpochMillis` INTEGER NOT NULL, `archived` INTEGER NOT NULL)",
+        "fields": [
+          {"fieldPath": "id", "columnName": "id", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "name", "columnName": "name", "affinity": "TEXT", "notNull": true},
+          {"fieldPath": "notes", "columnName": "notes", "affinity": "TEXT", "notNull": true},
+          {"fieldPath": "frequencyType", "columnName": "frequencyType", "affinity": "TEXT", "notNull": true},
+          {"fieldPath": "weekdayMask", "columnName": "weekdayMask", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "intervalDays", "columnName": "intervalDays", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "startEpochDay", "columnName": "startEpochDay", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "createdAtEpochMillis", "columnName": "createdAtEpochMillis", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "archived", "columnName": "archived", "affinity": "INTEGER", "notNull": true}
+        ],
+        "primaryKey": {"autoGenerate": true, "columnNames": ["id"]},
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "daily_records",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`habitId` INTEGER NOT NULL, `epochDay` INTEGER NOT NULL, `done` INTEGER NOT NULL, `note` TEXT NOT NULL, `updatedAtEpochMillis` INTEGER NOT NULL, PRIMARY KEY(`habitId`, `epochDay`), FOREIGN KEY(`habitId`) REFERENCES `habits`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {"fieldPath": "habitId", "columnName": "habitId", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "epochDay", "columnName": "epochDay", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "done", "columnName": "done", "affinity": "INTEGER", "notNull": true},
+          {"fieldPath": "note", "columnName": "note", "affinity": "TEXT", "notNull": true},
+          {"fieldPath": "updatedAtEpochMillis", "columnName": "updatedAtEpochMillis", "affinity": "INTEGER", "notNull": true}
+        ],
+        "primaryKey": {"autoGenerate": false, "columnNames": ["habitId", "epochDay"]},
+        "indices": [
+          {"name": "index_daily_records_habitId", "unique": false, "columnNames": ["habitId"], "orders": ["ASC"]},
+          {"name": "index_daily_records_epochDay", "unique": false, "columnNames": ["epochDay"], "orders": ["ASC"]}
+        ],
+        "foreignKeys": [
+          {
+            "table": "habits",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": ["habitId"],
+            "referencedColumns": ["id"]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b1ca7f5d51e2c1335fe95fc5ba74ce11')"
+    ]
+  }
+}
