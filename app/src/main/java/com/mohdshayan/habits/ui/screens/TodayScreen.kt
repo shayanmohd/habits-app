@@ -58,36 +58,35 @@ fun TodayScreen(
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
-
-        Column(modifier = Modifier.weight(1f)) {
+        LazyColumn(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             if (ui.items.isEmpty()) {
-                Text(
-                    text = stringResource(R.string.no_habits_today),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.secondary
-                )
+                item {
+                    Text(
+                        text = stringResource(R.string.no_habits_today),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                }
             } else {
-                LazyColumn(
-                    modifier = Modifier.weight(1f),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(ui.items, key = { it.id }) { item ->
-                        HabitRow(item = item, onOpenHabit = onOpenHabit, onToggleDone = onToggleDone)
-                    }
+                items(ui.items, key = { it.id }) { item ->
+                    HabitRow(item = item, onOpenHabit = onOpenHabit, onToggleDone = onToggleDone)
                 }
             }
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(
-                text = ui.quote,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 12.dp, vertical = 20.dp),
-                style = MaterialTheme.typography.bodyMedium,
-                fontStyle = FontStyle.Italic,
-                color = MaterialTheme.colorScheme.secondary,
-                textAlign = TextAlign.Center
-            )
         }
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(
+            text = ui.quote,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 20.dp),
+            style = MaterialTheme.typography.bodyMedium,
+            fontStyle = FontStyle.Italic,
+            color = MaterialTheme.colorScheme.secondary,
+            textAlign = TextAlign.Center
+        )
     }
 }
 

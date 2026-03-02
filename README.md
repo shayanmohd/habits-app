@@ -1,19 +1,26 @@
-# HabitTrack
+# Habits
 
-A native Android habit tracking app built with Kotlin and Jetpack Compose.
+A native Android habit tracker focused on minimalist design, smooth performance, and full offline usage.
 
-## Author
+## Overview
 
-- Name: Mohd Shayan
-- Website: https://mohdshayan.com
-- GitHub: https://github.com/shayanmohd
-- Email: contact@mohdshayan.com
-- LinkedIn: https://linkedin.com/in/shayanmohd
-- X: @mohdshayanX
+- App name: `Habits`
+- Application ID: `com.mohdshayan.habits`
+- Platform: Android (Kotlin + Jetpack Compose)
+- Data model: Local Room (SQLite), no backend
 
-## Copyright
+## Features
 
-Copyright (c) Mohd Shayan. All rights reserved.
+- Add habits with notes and frequency:
+- Daily
+- Specific weekdays
+- Every N days
+- Habit-specific calendar status view
+- Today checklist with completion toggles
+- Long-press to select and delete a habit
+- Motivational discipline quote on launch
+- Home screen summary widget (Glance)
+- Multi-language strings (EN, ES, HI, FR, DE, AR, JA, ZH, PT)
 
 ## Tech Stack
 
@@ -23,15 +30,23 @@ Copyright (c) Mohd Shayan. All rights reserved.
 - MVVM + StateFlow
 - Jetpack Glance (Widget)
 
-## Features
+## Privacy
 
-- Minimal, CPU-light habit tracking UI
-- Habit frequencies: daily, specific weekdays, every N days
-- Notes per habit
-- Today checklist with completion toggle
-- Habit-specific calendar status tracking
-- Home screen widget summary
-- Multi-language string resources
+This app is designed to run fully offline and keep user habit data on-device.
+See [PRIVACY_POLICY.md](PRIVACY_POLICY.md).
+
+## Build
+
+Requirements:
+- JDK 17+
+- Android SDK installed
+
+Commands:
+
+```bash
+./gradlew assembleDebug
+./gradlew bundleRelease
+```
 
 ## Project Structure
 
@@ -39,8 +54,15 @@ Copyright (c) Mohd Shayan. All rights reserved.
 - `app/src/main/res/` - resources, localization, icons
 - `app/schemas/` - Room schema export
 
-## Build
+## Author
 
-```bash
-./gradlew assembleDebug
-```
+- Mohd Shayan
+- Website: https://mohdshayan.com
+- GitHub: https://github.com/shayanmohd
+- Email: contact@mohdshayan.com
+- LinkedIn: https://linkedin.com/in/shayanmohd
+- X: @mohdshayanX
+
+## License
+
+MIT License. See [LICENSE](LICENSE).

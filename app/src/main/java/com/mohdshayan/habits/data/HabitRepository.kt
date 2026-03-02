@@ -43,6 +43,8 @@ class HabitRepository(
 
     suspend fun addHabit(habit: HabitEntity): Long = habitDao.insert(habit)
 
+    suspend fun deleteHabit(habitId: Long) = habitDao.deleteById(habitId)
+
     suspend fun setDone(habitId: Long, date: LocalDate, done: Boolean) {
         recordDao.upsert(
             DailyRecordEntity(

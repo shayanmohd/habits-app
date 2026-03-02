@@ -37,6 +37,7 @@
     <string name="validation_name_required">habit name is required</string>
     <string name="validation_interval_required">enter a valid interval (1 or more)</string>
     <string name="back">back</string>
+    <string name="delete">delete</string>
     <string name="open_habit">open habit</string>
     <string name="today_progress">%1$d / %2$d done</string>
 </resources>

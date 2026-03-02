@@ -68,7 +68,10 @@ private fun AppNav(todayViewModel: TodayViewModel) {
                 ui = ui,
                 onBackToToday = { navController.popBackStack() },
                 onAdd = { navController.navigate("add") },
-                onOpenHabit = { id -> navController.navigate("detail/$id") }
+                onOpenHabit = { id -> navController.navigate("detail/$id") },
+                onSelectHabit = vm::selectHabit,
+                onDeleteSelected = vm::deleteSelectedHabit,
+                onClearSelection = vm::clearSelection
             )
         }
 

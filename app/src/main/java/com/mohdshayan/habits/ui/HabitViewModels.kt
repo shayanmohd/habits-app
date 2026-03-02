@@ -29,14 +29,10 @@ data class TodayUiState(
 }
 
 class TodayViewModel(private val repository: HabitRepository) : ViewModel() {
-    private val dailyQuote: String = run {
-        val day = LocalDate.now().toEpochDay().toInt()
-        val index = Math.floorMod(day, StoicDisciplineQuotes.size)
-        StoicDisciplineQuotes[index]
-    }
+    private val launchQuote: String = StoicDisciplineQuotes.random()
 
     val ui: StateFlow<TodayUiState> = repository.observeTodayHabits()
-        .map { TodayUiState(items = it, quote = dailyQuote) }
+        .map { TodayUiState(items = it, quote = launchQuote) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), TodayUiState())
 
     fun toggleDone(habitId: Long, done: Boolean) {
@@ -45,13 +41,37 @@ class TodayViewModel(private val repository: HabitRepository) : ViewModel() {
 }
 
 data class HabitsUiState(
-    val items: List<HabitEntity> = emptyList()
+    val items: List<HabitEntity> = emptyList(),
+    val selectedHabitId: Long? = null
 )
 
 class HabitsViewModel(private val repository: HabitRepository) : ViewModel() {
-    val ui: StateFlow<HabitsUiState> = repository.observeAllHabits()
-        .map { HabitsUiState(it) }
+    private val selectedHabitId = MutableStateFlow<Long?>(null)
+
+    val ui: StateFlow<HabitsUiState> = combine(
+        repository.observeAllHabits(),
+        selectedHabitId
+    ) { items, selectedId ->
+        val safeSelection = selectedId?.takeIf { selected -> items.any { it.id == selected } }
+        HabitsUiState(items = items, selectedHabitId = safeSelection)
+    }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), HabitsUiState())
+
+    fun selectHabit(habitId: Long) {
+        selectedHabitId.value = habitId
+    }
+
+    fun clearSelection() {
+        selectedHabitId.value = null
+    }
+
+    fun deleteSelectedHabit() {
+        val selected = selectedHabitId.value ?: return
+        viewModelScope.launch {
+            repository.deleteHabit(selected)
+            selectedHabitId.value = null
+        }
+    }
 }
 
 data class AddHabitUiState(

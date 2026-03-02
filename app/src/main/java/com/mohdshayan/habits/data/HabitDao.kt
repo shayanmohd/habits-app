@@ -16,4 +16,7 @@ interface HabitDao {
 
     @Query("SELECT * FROM habits WHERE id = :habitId LIMIT 1")
     fun observeHabit(habitId: Long): Flow<HabitEntity?>
+
+    @Query("DELETE FROM habits WHERE id = :habitId")
+    suspend fun deleteById(habitId: Long)
 }
