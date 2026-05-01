@@ -1,6 +1,7 @@
 *.iml
 .gradle/
 /local.properties
+local.properties
 /.idea/
 .DS_Store
 /build/
@@ -9,6 +10,7 @@
 .cxx/
 app/build/
 *.jks
+*.keystore
 keystore.properties
 .kotlin/
 .gradle-home/
