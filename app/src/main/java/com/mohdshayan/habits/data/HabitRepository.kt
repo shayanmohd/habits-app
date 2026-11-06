@@ -11,7 +11,9 @@ import java.time.LocalDate
 
 class HabitRepository(
     private val habitDao: HabitDao,
-    private val recordDao: DailyRecordDao
+    private val recordDao: DailyRecordDao,
+    /** Called after every write; the app refreshes the home-screen widget here. */
+    private val onDataChanged: suspend () -> Unit = {}
 ) {
     fun observeAllHabits(): Flow<List<HabitEntity>> = habitDao.observeActiveHabits()
 
@@ -41,9 +43,13 @@ class HabitRepository(
     fun observeHabitCalendar(habitId: Long): Flow<List<DailyRecordEntity>> =
         recordDao.observeRecordsForHabit(habitId)
 
-    suspend fun addHabit(habit: HabitEntity): Long = habitDao.insert(habit)
+    suspend fun addHabit(habit: HabitEntity): Long =
+        habitDao.insert(habit).also { onDataChanged() }
 
-    suspend fun deleteHabit(habitId: Long) = habitDao.deleteById(habitId)
+    suspend fun deleteHabit(habitId: Long) {
+        habitDao.deleteById(habitId)
+        onDataChanged()
+    }
 
     suspend fun setDone(habitId: Long, date: LocalDate, done: Boolean) {
         recordDao.upsert(
@@ -54,6 +60,7 @@ class HabitRepository(
                 updatedAtEpochMillis = System.currentTimeMillis()
             )
         )
+        onDataChanged()
     }
 
     fun observeWidgetSummary(today: LocalDate = LocalDate.now()): Flow<Pair<Int, Int>> {
